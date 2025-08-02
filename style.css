@@ -1,0 +1,253 @@
+:root {
+  --primary-color: #007A3D;       /* Hijau NU */
+  --secondary-color: #FFD700;     /* Emas */
+  --text-color: #333;
+  --bg-dark: #1a1a1a;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --white: #ffffff;
+}
+
+* {
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  color: var(--text-color);
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.text-primary-nu {
+  color: var(--primary-color) !important;
+}
+
+/* ======================= NAVBAR ======================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent !important;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navbar .navbar-brand span {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.navbar .nav-link {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--secondary-color);
+}
+
+.navbar-toggler i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ======================= DROPDOWN ======================= */
+.dropdown-menu {
+  border: none;
+  padding: 0.5rem 0;
+  animation: fadeIn 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  color: var(--text-color);
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* ======================= KEYFRAME ======================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================= CAROUSEL ======================= */
+.carousel-item {
+  height: 100vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.carousel-caption {
+  bottom: 20%;
+  color: var(--white);
+  text-shadow: 1px 1px 5px var(--bg-dark);
+  max-width: 600px;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background: var(--bg-overlay);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.carousel-caption h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.carousel-caption p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: background-color 0.3s ease;
+  z-index: 11;
+}
+
+.carousel-control-prev {
+  left: 2cm;
+}
+
+.carousel-control-next {
+  right: 2cm;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: var(--primary-color);
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
+}
+
+.card-visi-misi {
+  background: var(--secondary-color);      /* Warna emas */
+  color: var(--text-color);                /* Gunakan warna teks utama (gelap) */
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-visi-misi:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-visi-misi h5 {
+  color: var(--primary-color);     /* Judul warna hijau */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.card-visi-misi p,
+.card-visi-misi li {
+  color: #000;                     /* Teks isi hitam */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.card-visi-misi .icon {
+  color: var(--primary-color);     /* Ikon hijau NU */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+/* ======================= TIMELINE ======================= */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 3px solid white;
+}
+
+.timeline-content {
+  background-color: rgba(0, 122, 61, 0.08);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+/* ======================= SAMBUTAN KEPSEK ======================= */
+.bg-visi, .bg-misi {
+  background-color: transparent;
+}
+
+.sambutan-kepsek-section {
+  background-color: transparent;
+}
+
+.sambutan-kepsek-section h3 {
+  color: var(--primary-color);
+}
+
+.sambutan-kepsek-section p {
+  font-size: 1.05rem;
+  color: #333;
+}
